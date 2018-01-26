@@ -1,0 +1,42 @@
+﻿@model MVCSampleTest.Models.Picture
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Picture</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PicturePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PicturePath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PictureCreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PictureCreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PictureModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PictureModifiedDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PictureID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

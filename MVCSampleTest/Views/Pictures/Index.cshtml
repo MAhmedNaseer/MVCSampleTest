@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MVCSampleTest.Models.Picture>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PicturePath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PictureCreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PictureModifiedDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PicturePath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PictureCreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PictureModifiedDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PictureID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PictureID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PictureID })
+        </td>
+    </tr>
+}
+
+</table>
